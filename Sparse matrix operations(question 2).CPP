@@ -12,9 +12,8 @@ of any size. The reason why I kept the matrices of fixed size is because otherwi
 would have to implement nested linked lists which would make the logic very difficult
 to understand for the reader. Keeping the matrices of a fixed size allows the reader 
 to focus better on the main logic. I assume the reader already knows the logic for 
-naive matrix multiplication and convolution( I mean if you don't then what exactly are
-you trying to do reading this code? :P).
-Also, this logic accepts the generic/standard form of a matrix(no RCS/RCV nonsense) for the
+naive matrix multiplication and convolution.
+Also, this logic accepts the generic/standard form of a matrix(no RCS/RCV required) for the
 sake of portability(bonus points please). 
 */
 
@@ -23,7 +22,7 @@ sake of portability(bonus points please).
 BASIC IDEA - find positions of all the non zero elements in each row of matrix of A and each column of B,
 count the number of such elements too! We wanna do as little work as possible, so in each row/column change, 
 we wanna compare if the row in mat A has less elements than those in the corresponding column in B. Once that is done,  
-simply multiply the elements as you do in the standard method. The counting is required to figure out how many time the 
+simply multiply the elements as you do in the standard method. The counting is required to figure out how many times the 
 innermost loop is supposed to run(so that we don't naively run the loop as many times as the rows in B).
 */
 struct node //A struct which either represents the row or the column of the matrix
